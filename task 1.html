@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkillCraft Landing Page</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0f172a;
+color:white;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 50px;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+z-index:1000;
+transition:.4s;
+}
+
+nav.scrolled{
+background:#020617;
+}
+
+.logo{
+font-size:28px;
+font-weight:bold;
+color:#38bdf8;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+}
+
+nav ul li{
+margin-left:25px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+padding:8px 15px;
+border-radius:20px;
+transition:.3s;
+}
+
+nav ul li a:hover{
+background:#38bdf8;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(-45deg,#0f172a,#1e3a8a,#06b6d4,#9333ea);
+background-size:400% 400%;
+animation:gradient 12s ease infinite;
+position:relative;
+overflow:hidden;
+}
+
+@keyframes gradient{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.circle{
+position:absolute;
+border-radius:50%;
+background:rgba(255,255,255,0.1);
+animation:float 6s infinite ease-in-out;
+}
+
+.c1{
+width:150px;
+height:150px;
+top:10%;
+left:10%;
+}
+
+.c2{
+width:250px;
+height:250px;
+bottom:10%;
+right:10%;
+}
+
+@keyframes float{
+50%{
+transform:translateY(-30px);
+}
+}
+
+.hero h1{
+font-size:65px;
+margin-bottom:20px;
+}
+
+.hero h2{
+color:#facc15;
+height:40px;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:14px 30px;
+background:#38bdf8;
+color:white;
+text-decoration:none;
+border-radius:30px;
+transition:.4s;
+}
+
+.btn:hover{
+transform:scale(1.1);
+box-shadow:0 0 25px #38bdf8;
+}
+
+/* SECTIONS */
+
+section{
+padding:100px 10%;
+}
+
+.title{
+text-align:center;
+font-size:40px;
+margin-bottom:50px;
+}
+
+/* SERVICES */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(255,255,255,0.08);
+padding:30px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+transition:.5s;
+position:relative;
+overflow:hidden;
+}
+
+.card:hover{
+transform:translateY(-15px);
+box-shadow:0 0 30px #38bdf8;
+}
+
+.card h3{
+margin-bottom:15px;
+color:#38bdf8;
+}
+
+/* STATS */
+
+.stats{
+display:flex;
+justify-content:center;
+gap:60px;
+flex-wrap:wrap;
+text-align:center;
+}
+
+.stat h1{
+font-size:55px;
+color:#38bdf8;
+}
+
+/* CONTACT */
+
+.contact{
+text-align:center;
+}
+
+.contact button{
+padding:15px 30px;
+border:none;
+border-radius:30px;
+background:#38bdf8;
+color:white;
+cursor:pointer;
+font-size:18px;
+}
+
+/* FOOTER */
+
+footer{
+background:#020617;
+padding:25px;
+text-align:center;
+}
+
+/* REVEAL */
+
+.hidden{
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:40px;
+}
+
+nav{
+padding:15px;
+}
+
+nav ul li{
+margin-left:10px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<nav id="navbar">
+<div class="logo">SkillCraft</div>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#stats">Stats</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero" id="home">
+
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+
+<div>
+<h1>SkillCraft Technology</h1>
+<h2 id="typing"></h2>
+<a href="#services" class="btn">Explore Now</a>
+</div>
+
+</section>
+
+<section id="services" class="hidden">
+
+<h2 class="title">Our Services</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🚀 Launch Your Dream</h3>
+<p>Turn ideas into stunning websites and digital experiences.</p>
+</div>
+
+<div class="card">
+<h3>🧠 AI Powered Solutions</h3>
+<p>Modern intelligent interfaces with smart automation.</p>
+</div>
+
+<div class="card">
+<h3>⚡ Lightning Performance</h3>
+<p>Fast loading websites with smooth user experience.</p>
+</div>
+
+<div class="card">
+<h3>🌍 Global Reach</h3>
+<p>Responsive designs that work perfectly everywhere.</p>
+</div>
+
+<div class="card">
+<h3>🎨 Creative UI Design</h3>
+<p>Beautiful user interfaces with engaging animations.</p>
+</div>
+
+<div class="card">
+<h3>🛡 Secure Systems</h3>
+<p>Reliable and secure web applications.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="stats" class="hidden">
+
+<h2 class="title">Achievements</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h1>100+</h1>
+<p>Projects</p>
+</div>
+
+<div class="stat">
+<h1>50+</h1>
+<p>Clients</p>
+</div>
+
+<div class="stat">
+<h1>24/7</h1>
+<p>Support</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="hidden">
+
+<h2 class="title">Why Choose Us?</h2>
+
+<div class="stats">
+
+<div class="stat">
+<h1>⚡</h1>
+<p>Fast & Responsive</p>
+</div>
+
+<div class="stat">
+<h1>🎨</h1>
+<p>Creative Design</p>
+</div>
+
+<div class="stat">
+<h1>🚀</h1>
+<p>Innovation</p>
+</div>
+
+<div class="stat">
+<h1>🌍</h1>
+<p>Global Standards</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="contact hidden">
+
+<h2 class="title">Contact Us</h2>
+
+<p>Email: info@skillcraft.com</p>
+<br>
+
+<button>Get In Touch</button>
+
+</section>
+
+<footer>
+© 2026 SkillCraft Technology | Responsive Landing Page
+</footer>
+
+<script>
+
+/* Navbar Scroll */
+
+window.addEventListener("scroll",()=>{
+document.getElementById("navbar")
+.classList.toggle("scrolled",window.scrollY>50);
+});
+
+/* Typing Effect */
+
+const text="Web Developer | Designer | Creator";
+let i=0;
+
+function type(){
+if(i<text.length){
+document.getElementById("typing").innerHTML+=text.charAt(i);
+i++;
+setTimeout(type,100);
+}
+}
+type();
+
+/* Scroll Reveal */
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".hidden").forEach(el=>{
+observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>
